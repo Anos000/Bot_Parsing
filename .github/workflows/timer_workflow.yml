@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Wait for 40 seconds
+    - name: Wait for 55 seconds
       run: |
-        echo "Starting timer for 40 seconds..."
-        sleep 40  # Задержка на 40 секунд
+        echo "Starting timer for 18000 seconds..."
+        sleep 18000  # Задержка на 5 часов
 
     - name: Restart Bot Workflow
       run: |

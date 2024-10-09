@@ -48,7 +48,7 @@ def handle_text(message):
     elif message.text == "Информация о боте":
         bot.send_message(message.chat.id, "Этот бот парсит данные с веб-сайта и отправляет их в формате Excel.")
     elif message.text == "Контакты":
-        bot.send_message(message.chat.id, "Связаться с нами можно по адресу: example@example.com")
+        bot.send_message(message.chat.id, "Связаться с нами можно по почте: krutskih.nikita04@gmail.com или forever77700777@gmail.com")
     else:
         bot.send_message(message.chat.id, "Выберите опцию из меню.")
 

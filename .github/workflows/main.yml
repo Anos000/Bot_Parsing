@@ -36,7 +36,7 @@ jobs:
     - name: Run Bot Script
       run: |
           python bot_test.py &  # Запуск кода бота в фоновом режиме
-          echo "Waiting for 40 seconds..."
-          sleep 40  # Задержка на 40 секунд
+          echo "Waiting for 18000 seconds..."
+          sleep 18000  # Задержка на 18000 секунд (5 часов)
           echo "Stopping the workflow..."
           exit 0  # Завершение работы
