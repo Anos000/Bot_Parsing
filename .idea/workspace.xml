@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6869e83-9229-4d3f-82bd-89283e83bcc1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_10_2024_20_33_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_10_2024_20_33__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/python_parser.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/python_parser.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/timer_workflow.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/timer_workflow.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/downloads/parsed_data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/downloads/parsed_data.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
