@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
-        python-version: '3.x'  # Укажите версию Python
+        python-version: '3.x'
 
     - name: Install dependencies
       run: |
@@ -25,8 +25,8 @@ jobs:
 
     - name: Run Python script
       env:
-        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # Используйте ваш токен здесь
-      run: python your_script.py  # Укажите имя вашего скрипта
+        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  #  токен здесь
+      run: python your_script.py  #имя скрипта
 
     - name: Commit and push changes
       run: |
