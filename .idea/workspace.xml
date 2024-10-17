@@ -5,14 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6869e83-9229-4d3f-82bd-89283e83bcc1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_10_2024_20_33_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_10_2024_20_33__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/All_Parcing.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/Create_Docx.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_10_2024_19_32_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_10_2024_19_32_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_10_2024_19_32__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_10_2024_19_32__Changes_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_10_2024_12_31_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_10_2024_12_31__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_10_2024_12_32_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_10_2024_12_32_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_10_2024_12_32__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_10_2024_12_32__Changes_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_10_2024_12_33_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_10_2024_12_33__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_10_2024_18_52_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_10_2024_12_37_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_10_2024_12_37__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poisk_ART.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create_docx_files.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/downloads/duplicate_items_across_files.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/downloads/parsed_data2.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/downloads/parsed_data2_products.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/downloads/parsed_data_autoopt.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/downloads/parsed_data_autoopt_products.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/downloads/parsed_data_products.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parcingV2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parcingV3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/python_parser.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/python_parser.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/timer_workflow.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/timer_workflow.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/python_parser.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_10_2024_20_58_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_10_2024_20_58__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/downloads/parsed_data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/downloads/parsed_data.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/your_script.py" beforeDir="false" afterPath="$PROJECT_DIR$/your_script.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +54,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="0cd5d1c5ff43c716d386e7b74b2362e0ae503c2a" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -40,19 +72,27 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Python.Poisk_ART.executor&quot;: &quot;Run&quot;,
     &quot;Python.bot.executor&quot;: &quot;Run&quot;,
+    &quot;Python.bot_test.executor&quot;: &quot;Run&quot;,
     &quot;Python.fr.executor&quot;: &quot;Run&quot;,
     &quot;Python.parcing.executor&quot;: &quot;Run&quot;,
+    &quot;Python.parcingV2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.parcingV3.executor&quot;: &quot;Run&quot;,
     &quot;Python.test_parcing.executor&quot;: &quot;Run&quot;,
     &quot;Python.your_script.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Parcing&quot;
+    &quot;last_opened_file_path&quot;: &quot;D:/Parcing/.github/workflows&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Parcing\.github\workflows" />
       <recent name="D:\Parcing" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Parcing\.github\workflows" />
     </key>
   </component>
   <component name="SharedIndexes">

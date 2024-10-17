@@ -1,25 +1,23 @@
-# your_script.py
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 import pandas as pd
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 import pytz
 import re
 
 # Настройка для работы с Chrome
 options = webdriver.ChromeOptions()
-options.add_argument('--headless')  # Запуск браузера в фоновом режиме
+options.add_argument('--headless')
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
 
-# Устанавливаем драйвер для Chrome с использованием webdriver_manager
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 # URL страницы интернет-магазина
-url = "https://avtobat36.ru/catalog/gaz_1/"
+url = "https://avtobat36.ru/catalog/avtomobili_gruzovye/"
 driver.get(url)
 html_content = driver.page_source
 soup = BeautifulSoup(html_content, 'lxml')
@@ -47,7 +45,6 @@ for page in range(1, last_page + 1):
 
     for product in products:
         try:
-            # Проверяем наличие элемента перед извлечением текста
             title_element = product.find('a', class_='d-lnk-txt')
             title = title_element.text.strip() if title_element else "Нет названия"
 
@@ -55,7 +52,11 @@ for page in range(1, last_page + 1):
             price = price_element.text.strip() if price_element else 'Необходимо уточнять'
 
             number_element = product.find('div', class_='sec_params d-note')
-            number = number_element.text.strip().split()[1] if number_element else "Нет артикула"
+            if number_element:
+                details = number_element.text.strip()
+                number = details[details.find(':') + 1:details.find('П') - 1].strip()
+            else:
+                number = 'Артикул отсутствует'
 
             link_element = product.find('a', class_='d-lnk-txt')
             link = link_element['href'] if link_element else "Нет ссылки"
@@ -70,25 +71,34 @@ for page in range(1, last_page + 1):
         except Exception as e:
             print(f"Ошибка при обработке товара: {e}")
 
-# Сохраняем данные в Excel, добавляя их в существующий файл
+# Путь к файлу Excel
 downloads_dir = "downloads"
 os.makedirs(downloads_dir, exist_ok=True)
 excel_file = os.path.join(downloads_dir, "parsed_data.xlsx")
 
-# Объединяем данные, если файл уже существует
-try:
-    if os.path.exists(excel_file):
-        existing_df = pd.read_excel(excel_file, engine='openpyxl')
-        df = pd.concat([existing_df, pd.DataFrame(parsed_data)], ignore_index=True)
+# Проверка на изменения по дате (вчерашний день)
+if os.path.exists(excel_file):
+    existing_df = pd.read_excel(excel_file, engine='openpyxl')
+
+    # Получаем вчерашний день
+    yesterday = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
+
+    # Фильтруем данные за вчерашний день
+    existing_df_yesterday = existing_df[existing_df['Дата парсинга'].str.contains(yesterday)]
+
+    # Проверяем, есть ли изменения по сравнению с данными за вчерашний день
+    new_df = pd.DataFrame(parsed_data)
+    if not existing_df_yesterday.equals(new_df):
+        # Если есть изменения, добавляем все новые данные в файл
+        combined_df = pd.concat([existing_df, new_df], ignore_index=True)
+        combined_df.to_excel(excel_file, index=False)
+        print(f"Данные успешно обновлены в {excel_file}")
     else:
-        df = pd.DataFrame(parsed_data)
-
-    df.to_excel(excel_file, index=False)
-    print(f"Данные успешно сохранены и обновлены в {excel_file}")
-
-except ValueError as e:
-    print(f"Ошибка при чтении файла Excel: {e}. Создаем новый файл...")
+        print("Нет изменений, данные не обновляются.")
+else:
+    # Если файла не существует, создаем новый
     df = pd.DataFrame(parsed_data)
     df.to_excel(excel_file, index=False)
+    print(f"Данные успешно сохранены в {excel_file}")
 
 driver.quit()

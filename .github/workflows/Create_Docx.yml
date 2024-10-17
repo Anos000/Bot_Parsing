@@ -1,0 +1,33 @@
+name: Create Docx from Excel
+
+on:
+  workflow_dispatch:  # Позволяет запускать вручную
+
+jobs:
+  create-docx:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas python-docx openpyxl
+
+    - name: Run Python script to create docx
+      run: python create_docx_files.py  # Имя вашего скрипта для создания .docx файлов
+
+    - name: Commit and push changes
+      run: |
+        git config --local user.name "github-actions[bot]"
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git add downloads/*.docx  # Добавляем все созданные .docx файлы
+        git commit -m "Create docx from Excel" || echo "No changes to commit"
+        git push https://x-access-token:${{ secrets.MY_GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main || echo "No changes to push"

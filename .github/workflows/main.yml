@@ -19,7 +19,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install selenium webdriver-manager beautifulsoup4 pandas openpyxl lxml pytz telebot
+        pip install selenium webdriver-manager beautifulsoup4 pandas openpyxl lxml pytz telebot python-docx  # Добавляем python-docx
 
     - name: Start Timer Workflow
       uses: actions/github-script@v6

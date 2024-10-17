@@ -1,0 +1,83 @@
+name: Daily Python Combined Parser and Create Docx
+
+on:
+  schedule:
+    - cron: '0 23 * * *'  # Запускать скрипт ежедневно в 02:00 UTC
+  workflow_dispatch:  # Позволяет запускать вручную
+
+jobs:
+  run-parsers:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libxi6 libgconf-2-4 xvfb  # Установка зависимостей для второго скрипта
+        python -m pip install --upgrade pip
+        pip install selenium webdriver-manager beautifulsoup4 pandas openpyxl lxml pytz python-docx
+
+    # Step 1: Запуск первого скрипта
+    - name: Run Python script 1
+      env:
+        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # Токен GitHub для доступа к репозиторию
+      run: python your_script.py  # Имя первого скрипта
+
+    - name: Commit and push changes (script 1)
+      run: |
+        git config --local user.name "github-actions[bot]"
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git add downloads/parsed_data.xlsx
+        git commit -m "Update parsed_data.xlsx with new data" || echo "No changes to commit"
+        git push https://x-access-token:${{ secrets.MY_GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main || echo "No changes to push"
+
+    # Step 2: Настройка виртуального дисплея для второго скрипта
+    - name: Set up Xvfb for headless Chrome (for script 2)
+      run: |
+        Xvfb :99 -screen 0 1280x1024x16 &  # Запуск виртуального дисплея для headless Chrome
+      env:
+        DISPLAY: :99  # Указание переменной DISPLAY для всех последующих шагов
+
+    # Step 3: Запуск второго скрипта
+    - name: Run Python script 2
+      run: python parcingV2.py  # Имя второго скрипта
+
+    - name: Commit and push changes (script 2)
+      run: |
+        git config --local user.name "github-actions[bot]"
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git add downloads/parsed_data2.xlsx
+        git commit -m "Update parsed_data2.xlsx with new data" || echo "No changes to commit"
+        git push https://x-access-token:${{ secrets.MY_GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main || echo "No changes to push"
+
+    # Step 4: Запуск третьего скрипта
+    - name: Run Python script 3
+      run: python parcingV3.py  # Имя третьего скрипта
+
+    - name: Commit and push changes (script 3)
+      run: |
+        git config --local user.name "github-actions[bot]"
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git add downloads/parsed_data_autoopt.xlsx
+        git commit -m "Update parsed_data_autoopt.xlsx with new data" || echo "No changes to commit"
+        git push https://x-access-token:${{ secrets.MY_GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main || echo "No changes to push"
+
+    # Step 5: Создание текстовых файлов на основе Excel файлов
+    - name: Create docx files from Excel
+      run: python create_docx_files.py  # Имя вашего скрипта для создания .docx файлов
+
+    - name: Commit and push changes for docx
+      run: |
+        git config --local user.name "github-actions[bot]"
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git add downloads/*.docx  # Добавляем все созданные .docx файлы
+        git commit -m "Create docx from Excel" || echo "No changes to commit"
+        git push https://x-access-token:${{ secrets.MY_GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main || echo "No changes to push"
