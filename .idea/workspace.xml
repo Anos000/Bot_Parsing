@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6869e83-9229-4d3f-82bd-89283e83bcc1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/diagrama.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/parsed_data_products.docx" beforeDir="false" afterPath="$PROJECT_DIR$/downloads/parsed_data_products.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,22 +38,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Poisk_ART.executor&quot;: &quot;Run&quot;,
-    &quot;Python.bot.executor&quot;: &quot;Run&quot;,
-    &quot;Python.bot_test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.fr.executor&quot;: &quot;Run&quot;,
-    &quot;Python.parcing.executor&quot;: &quot;Run&quot;,
-    &quot;Python.parcingV2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.parcingV3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_parcing.executor&quot;: &quot;Run&quot;,
-    &quot;Python.your_script.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Parcing/.github/workflows&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Poisk_ART.executor": "Run",
+    "Python.bot.executor": "Run",
+    "Python.bot_test.executor": "Run",
+    "Python.create_docx_files.executor": "Run",
+    "Python.diagrama.executor": "Run",
+    "Python.fr.executor": "Run",
+    "Python.parcing.executor": "Run",
+    "Python.parcingV2.executor": "Run",
+    "Python.parcingV3.executor": "Run",
+    "Python.test_parcing.executor": "Run",
+    "Python.your_script.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Parcing/.github/workflows"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Parcing\.github\workflows" />
